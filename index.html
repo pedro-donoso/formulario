@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>Reserva tu Hora</title>
+</head>
+<body>
+    <body class="bg-info">
+
+		<div class="container my-5 bg-warning">
+			<h1 class="display-5 font-weight-bold mb-3">Reserva tu Hora</h1>
+			<hr>
+			
+		</div>
+
+		<div class="container my-5 bg-info pt-3">
+			<h3 class="display-5 font-weight-bold mb-3">Ingresa tus datos</h3>
+			<hr>
+
+			<form action="" method="POST" id="formulario" onsubmit="return false;">
+
+                
+			<div class="row">     
+				<div class="form-group col-6 font-weight-bold">
+					<label for="nombre" >Nombres:</label>
+					<input type="text" class="form-control" id="nombre" placeholder="ingresa tus nombres">
+					<div class="alert alert-danger my-2" role="alert" id="error_nombre">
+					</div>
+
+				</div>
+
+				<div class="form-group col-6 font-weight-bold">
+					<label for="apellidos">Apellidos:</label>
+					<input type="text" class="form-control" id="apellidos" placeholder="ingresa tus apellidos">
+					<div class="alert alert-danger my-2" role="alert" id="error_apellidos">
+					</div>
+                </div>
+			</div>
+			<div class="row">
+			<div class="form-group col-6 font-weight-bold">
+				<label for="rut">RUT:</label>
+				<input type="text" class="form-control" id="rut" placeholder="sin puntos ni digito verificador">
+				<div class="alert alert-danger my-2" role="alert" id="error_rut">
+				</div>
+			</div>
+				<div class="form-group col-6 font-weight-bold">
+					<label for="edad">Edad</label>
+					<input type="number" class="form-control" id="edad" placeholder="elija su edad">
+					<div class="alert alert-danger my-2" role="alert" id="error_edad">
+					</div>
+                </div>
+                
+                <div class="form-group col-12 font-weight-bold">
+					<label for="email">Correo electrónico:</label>
+					<input type="email" class="form-control" id="email" placeholder="xxxxxx@xxxx.xxx">
+					<div class="alert alert-danger my-2" role="alert" id="error_email">
+					</div>
+                </div>
+			</div>
+			<div class="row">
+                <div class="form-group col-12 font-weight-bold">
+					<label for="Especialidad">Escoga su Especialidad</label>
+                <select id="especialidad" class="form-control">
+                  <option>Dental</option>
+                  <option>Imagenología</option>
+                  <option>Pediatría</option>
+                  <option>Traumatología</option>
+                </select>
+                <div class="alert alert-danger my-2" role="alert" id="error_especialidad">
+                </div>
+            </div>
+                
+                <div class="form-group col-6 font-weight-bold">
+					<label for="fecha">Elija Fecha:</label>
+					<input type="date" class="form-control" id="fecha">
+					<div class="alert alert-danger my-2" role="alert" id="error_fecha">
+					</div>
+                </div>
+                <div class="form-group col-6 font-weight-bold pb-3">
+					<label for="Hora">Elija Hora:</label>
+                <select id="hora" class="form-control">
+                  <option>09:00 hrs.</option>
+                  <option>10:00 hrs.</option>
+                  <option>11:00 hrs.</option>
+                  <option>12:00 hrs.</option>
+                  <option>13:00 hrs.</option>
+                  <option>14:00 hrs.</option>
+                  <option>15:00 hrs.</option>
+                  <option>16:00 hrs.</option>
+                </select>
+                <div class="alert alert-danger my-2" role="alert" id="error_hora">
+                </div>
+				</div>
+			</div>
+				<input type="submit" value="Enviar" id="submit" class="btn btn-danger">
+			
+			</form>
+
+			<div class="alert alert-secondary my-5 bg-warning font-weight-bold" role="alert" id="alerta">
+				<h3>Comprobante de su Registro</h3>
+				<hr>
+				<p id="p_rut" class="font-weight-bold">
+					Rut ingresado: <span class="font-weight-light"></span>
+				</p>
+				<p id="p_nombre" class="font-weight-bold">
+					Nombres ingresados: <span class="font-weight-light"></span>
+				</p>
+
+				<p id="p_apellidos" class="font-weight-bold">
+					Apellidos ingresados: <span class="font-weight-light"></span>
+				</p>
+
+				<p id="p_edad" class="font-weight-bold">
+					Edad ingresada: <span class="font-weight-light"></span>
+				</p>
+				<p id="p_email" class="font-weight-bold">
+					Email registrado: <span class="font-weight-light"></span>
+				</p>
+				<p id="p_especialidad" class="font-weight-bold">
+					Especialidad seleccionada: <span class="font-weight-light"></span>
+				</p>
+				<p id="p_fecha" class="font-weight-bold">
+					Fecha de atención: <span class="font-weight-light"></span>
+				</p>
+				<p id="p_hora" class="font-weight-bold">
+					Hora de atención: <span class="font-weight-light"></span>
+				</p>
+				
+				<h5>¡Gracias por preferirnos!</h5>
+			</div>
+			
+		</div>
+
+		<script src="JS/script.js"></script>
+</body>
+</html>
